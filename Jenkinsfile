@@ -19,7 +19,8 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /usr/local/bin/terraform init ./jenkins'
+                sh 'sudo  cd /usr/local/bin/'
+				sh 'sudo terraform init
             }
         }
         stage('terraform plan') {
@@ -33,6 +34,6 @@ pipeline {
             }
         }
 
-        
+
     }
 }
