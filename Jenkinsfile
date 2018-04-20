@@ -19,13 +19,12 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'sudo  cd /usr/local/bin/'
-  		sh 'sudo terraform init'
+                sh 'sudo  cd /usr/local/bin/terraform init'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /usr/local/bin/terraform plan ./jenkins'
+                sh 'ls ./jenkins; sudo /usr/local/bin/terraform plan'
             }
         }
         stage('terraform ended') {
@@ -37,3 +36,4 @@ pipeline {
 
     }
 }
+
